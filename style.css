@@ -3,4 +3,5 @@ body {
         and use the OS's UT font as the website fot
     */
     font: 100%/1.5 system-ui;
+    font-size: 1rem;
 }
