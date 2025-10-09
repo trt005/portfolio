@@ -73,3 +73,39 @@ form input, form textarea, form button {
 form button:hover {
     background-color: oklch(from var(--color-accent) 55% 40% h);
 }
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+    margin-block: 2em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    margin: 0;
+    gap: 1em;
+}
+
+.projects img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.3em;
+}
+
+.projects h2{
+    margin: 0;
+    font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: 400%;
+    margin-bottom: 0.5em;
+}
