@@ -55,29 +55,19 @@ form {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 1em;
-    align-items: center;
+    font: inherit;
 }
 
 form label {
     display: grid;
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
+    gap: 0.5em;
 }
 
 form input, form textarea, form button {
     width: 100%;
     box-sizing: border-box;
-}
-
-form button {
-    grid-column: 1 / -1;
-    padding: 0.5em 1em;
-    background-color: var(--color-accent);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
 }
 
 form button:hover {
