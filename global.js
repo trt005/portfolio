@@ -14,9 +14,9 @@ function $$(selector, context = document) {
 
 let pages = [
     { url: '', title: 'Home' },
-    {url: 'resume/', title: 'Resume'},
-    { url: 'projects/', title: 'Projects'},
-    { url: 'contact/', title: 'Contacts'},
+    { url: 'projects/', title: 'Projects' },
+    { url: 'resume/', title: 'Resume' },
+    { url: 'contact/', title: 'Contact' },
     { url: 'https://github.com/trt005', title:'Github'}
 ];
 
@@ -25,7 +25,7 @@ const BASE_PATH = (
     location.hostname === "127.0.0.1"
 )
     ? "/"
-    : "/website/";
+    : "/portfolio/";
 
 let nav = document.createElement('nav');
 document.body.prepend(nav);
