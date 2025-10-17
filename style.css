@@ -1,6 +1,39 @@
-html {
+:root {
+    color-scheme: light dark;
+
+    /* light theme colors*/
+    --color-bg: #ededed;
+    --color-text: #333338;
     --color-accent: oklch(65% 0.25 240);
+    --border-color: oklch(50% 0.13 250);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* dark theme colors*/
+        --color-bg: #333338;
+        --color-text: #ededed;
+        --color-accent: oklch(65% 0.25 240);
+        --border-color: oklch(50% 0.13 250);
+    }
+}
+html {
+    font-family: system-ui, sans-serif;
+    scroll-behavior: smooth;
     accent-color: var(--color-accent);
+}
+
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.8rem;
+    font-family: inherit;
+    color: canvastext;
+}
+
+.color-scheme select {
+    font-family: inherit;
 }
 
 body {
@@ -18,9 +51,10 @@ nav ul, nav li {
 }
 
 nav {
+    --border-color: var(--border-color);
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid oklch(80% 3% 200);
+    border-bottom: 1px solid var(--color-accent);
     margin-bottom: 1.5em;
 }
 
@@ -40,7 +74,7 @@ nav a:hover {
 }
 
 nav a.current {
-    border-bottom: 0.4em solid oklch(80% 3% 200);
+    border-bottom: 0.4em solid var(--color-accent);
     padding-bottom: 0.1em;
 }
 
