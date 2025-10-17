@@ -31,7 +31,6 @@ nav a {
     color: inherit;
     padding: 0.5em;
     font-weight: 500;
-    transition: background-color 0.3s ease;
 }
 
 nav a:hover {
