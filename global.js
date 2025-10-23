@@ -13,6 +13,7 @@ export async function fetchJSON(url) {
         }
   } catch (error) {
     console.error('Error fetching or parsing JSON data:', error);
+    return [];
   }
 }
 
