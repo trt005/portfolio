@@ -9,7 +9,7 @@ export async function fetchJSON(url) {
     const response = await fetch(url);
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+      throw new Error('Failed to fetch projects: ${response.statusText');
     }
 
     const data = await response.json();
@@ -22,27 +22,32 @@ export async function fetchJSON(url) {
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   if (!containerElement) {
-  console.error('Invalid container element provided.');
-  return;
+    console.error('Invalid container element');
+    return;
   }
 
-containerElement.innerHTML = '';
+  containerElement.innerHTML = '';
 
-projects.forEach((project) => {
-  const article = document.createElement('article');
+  if (!projects || projects.length === 0) {
+    containerElement.innerHTML = '<p>No projects to display.</p>';
+    return;
+  }
 
-  const title = project.title || 'Untitled Project';
-  const image = project.image || 'images/placeholder.png';
-  const description = project.description || 'No description available';
+  projects.forEach((project) => {
+    const article = document.createElement('article');
 
-  article.innerHTML = `
-    <h3>${project.title}</h3>
-    <img src="${project.image}" alt="${project.title}">
-    <p>${project.description}</p>
-`;
+    const title = project.title || 'Untitled Project';
+    const image = project.image || 'images/placeholder.png';
+    const description = project.description || 'No description available.';
 
-containerElement.appendChild(article);
-});
+    article.innerHTML = `
+      <${headingLevel}>${title}</${headingLevel}>
+      <img src="${image}" alt="${title}">
+      <p>${description}</p>
+    `;
+
+    containerElement.appendChild(article);
+  });
 }
 
 // let navLinks = $$('nav a');
