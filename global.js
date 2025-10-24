@@ -4,7 +4,21 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
+export async function fetchJSON(url) {
+  try {
+    const response = await fetch(url);
 
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+    return [];
+  }
+}
 
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   if (!containerElement) {
@@ -14,7 +28,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
 containerElement.innerHTML = '';
 
-projects.forEach(project => {
+projects.forEach((project) => {
   const article = document.createElement('article');
 
   article.innerHTML = `
@@ -24,7 +38,7 @@ projects.forEach(project => {
 `;
 
 containerElement.appendChild(article);
-})
+});
 }
 
 // let navLinks = $$('nav a');
