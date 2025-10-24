@@ -17,6 +17,27 @@ export async function fetchJSON(url) {
   }
 }
 
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement) {
+  console.error('Invalid container element provided.');
+  return;
+  }
+
+containerElement.innerHTML = '';
+
+projects.forEach(project => {
+  const article = document.createElement('article');
+
+  article.innerHTML = `
+    <h3>${project.title}</h3>
+    <img src="${project.image}" alt="${project.title}">
+    <p>${project.description}</p>
+`;
+
+containerElement.appendChild(article);
+})
+}
+
 // let navLinks = $$('nav a');
 
 // let currentLink = navLinks.find(
