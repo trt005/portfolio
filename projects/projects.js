@@ -1,4 +1,4 @@
-import { fetchJSON, renderProjects} from '../gloabl.js';
+import { fetchJSON, renderProjects} from '../global.js';
 
 const projetcs = await fetchJSON('../lib/projects.json');
 
