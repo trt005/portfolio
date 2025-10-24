@@ -5,4 +5,4 @@ console.log('Projects data:', projects);
 
 const projectsContainer = document.querySelector('.projects');
 
-renderProjects(projects, projectsContainer, 'h2');
+renderProjects(latestprojects, projectsContainer, 'h2');
