@@ -31,6 +31,10 @@ containerElement.innerHTML = '';
 projects.forEach((project) => {
   const article = document.createElement('article');
 
+  const title = project.title || 'Untitled Project';
+  const image = project.image || 'images/placeholder.png';
+  const description = project.description || 'No description available';
+
   article.innerHTML = `
     <h3>${project.title}</h3>
     <img src="${project.image}" alt="${project.title}">
