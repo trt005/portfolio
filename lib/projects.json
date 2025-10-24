@@ -1,61 +1,73 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
+        "title": "Carbs-And-Ratings",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "\n                \n            "
+        "description": "This project focuses on analyzing the relationship between the amount of carbohydrtes in a recipe and teh rating of a recipe."
     },
     {
-        "title": "Numquam iure eaque saepe?",
+        "title": "Expository Visualization of Food",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "\n                \n            "
+        "description": "This project focused on creating a graph to display information from grocery store food data."
     },
     {
-        "title": "Ullam asperiores dolorum accusantium.",
+        "title": "Introduction to the Web Platform",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "\n                \n            "
-    },
-    {
-        "title": "Reprehenderit voluptas porro quod.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "\n                \n            "
+        "description": "This Project focused on helping me create my own portfolio website with basic functions"
     },
     {
         "title": "Nam omnis placeat eligendi.",
+        "year": "2025",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
         "title": "Minus molestias tempora dolorem.",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
         "title": "Laborum rem expedita sit.",
+        "year": "2024",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
+        "title": "Music Genre and Spotify Users",
+        "year": "2023",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "This project focuses on answering whether or not music genre has relation to spotify user's satisfaction."
+    },
+    {
         "title": "Vitae quidem ratione officiis!",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
         "title": "Magnam veniam aliquid accusamus?",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
         "title": "Sed vero totam impedit!",
+        "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
         "title": "Nihil, unde! Id, quis.",
+        "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     },
     {
         "title": "Voluptates voluptatum officiis hic!",
+        "year": "2022",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "\n                \n            "
     }
