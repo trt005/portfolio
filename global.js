@@ -45,7 +45,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       <${headingLevel}>${title}</${headingLevel}>
       <img src="${image}" alt="${title}">
       <p>${description}</p>
-      <p>${year}$</p>
+      <p>${year}</p>
     `;
 
     containerElement.appendChild(article);
