@@ -15,7 +15,7 @@ arcs.forEach((arc, idx) => {
   d3.select('#projects-pie-plot')
     .append('path')
     .attr('d', arc)
-    .attr('fill', colors(index));
+    .attr('fill', colors(idx));
 });
 
 const projects = await fetchJSON('../lib/projects.json');
