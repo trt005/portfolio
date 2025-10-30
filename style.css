@@ -23,12 +23,6 @@ html {
     accent-color: var(--color-accent);
 }
 
-.project-year {
-  font-family: "Times New Roman", Times, serif; /* System font */
-  font-variant-numeric: oldstyle-nums;
-  color: gray;
-}
-
 .color-scheme {
     position: absolute;
     top: 1rem;
