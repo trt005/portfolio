@@ -23,6 +23,14 @@ html {
     accent-color: var(--color-accent);
 }
 
+.projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+
 .color-scheme {
     position: absolute;
     top: 1rem;
