@@ -13,14 +13,6 @@ let data = [
   { value: 5, label: 'cherries' },
 ];
 
-let legend = d3.select('.legend');
-data.forEach((d, idx) => {
-  legend
-    .append('li')
-    .attr('style', `--color:${colors(idx)}`)
-    .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
-});
-
 let sliceGenerator = d3.pie().value((d) => d.value);
 let arcData = sliceGenerator(data);
 let arcs = arcData.map((d) => arcGenerator(d));
@@ -32,6 +24,14 @@ arcs.forEach((arc, idx) => {
     .append('path')
     .attr('d', arc)
     .attr('fill', colors(idx));
+});
+
+let legend = d3.select('.legend');
+data.forEach((d, idx) => {
+  legend
+    .append('li')
+    .attr('style', `--color:${colors(idx)}`)
+    .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
 });
 
 const projects = await fetchJSON('../lib/projects.json');
