@@ -23,7 +23,7 @@ html {
     accent-color: var(--color-accent);
 }
 
-.projects-pie-plot {
+#projects-pie-plot {
   max-width: 20em;
   margin-block: 2em;
 
