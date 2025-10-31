@@ -37,7 +37,7 @@ function renderPieChart(projectsGiven) {
   let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
   newArcs.forEach((arc, idx) => {
-    svg.append('path')
+    Newsvg.append('path')
       .attr('d', arc)
       .attr('fill', colors(idx));
   });
