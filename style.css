@@ -39,13 +39,14 @@ html {
 }
 
 .legend {
-  display: grid;
+  display: flex;
+  gap: 1rem;
   flex: 1 1 auto;
-  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
-  gap: 0.5rem;
-  padding: 1rem;
+  padding: .5rem;
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   border-radius: 8px;
-  background-color: color-mix(in oklch, var(--color-bg), canvas 85%);
+  min-width: 200px;
+  box-sizing: border-box;
 }
 
 .legend li {
@@ -120,6 +121,8 @@ nav a:hover {
 nav a.current {
     border-bottom: 0.4em solid var(--color-accent);
     padding-bottom: 0.1em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 input, textarea, button {
