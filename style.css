@@ -66,8 +66,7 @@ html {
 
 .legend li:hover {
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 8px;
 }
 
 
@@ -119,6 +118,8 @@ nav a {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 nav a.current {
