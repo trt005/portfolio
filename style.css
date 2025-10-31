@@ -32,7 +32,7 @@ html {
 
 .container {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: flex-start;
   flex-wrap: wrap;
   padding: 1rem;
@@ -46,7 +46,6 @@ html {
   padding: 1rem;
   border-radius: 8px;
   background-color: color-mix(in oklch, var(--color-bg), canvas 85%);
-  max-width: calc(100% - 50px);
 }
 
 .legend li {
@@ -105,10 +104,10 @@ nav a {
     text-decoration: none;
     color: inherit;
     padding: 0.5em;
-    font-weight: 500;
-    transition: background-color 1s ease-in-out;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    font-weight: 500;
+    transition: background-color 1s ease-in-out;
 }
 
 nav a:hover {
@@ -121,8 +120,6 @@ nav a:hover {
 nav a.current {
     border-bottom: 0.4em solid var(--color-accent);
     padding-bottom: 0.1em;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
 }
 
 input, textarea, button {
