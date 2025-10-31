@@ -64,7 +64,8 @@ html {
 }
 
 .legend li:hover {
-  background-color: oklch(from var(--color-accent) 55% 40% h);
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 
@@ -114,8 +115,9 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
-    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  border-radius: 8px;
 }
 
 nav a.current {
