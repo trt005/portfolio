@@ -12,6 +12,8 @@ const projectsContainer = document.querySelector('.projects');
 renderProjects(projects, projectsContainer, 'h2');
 
 let arcGenerator = d3.arc().innerRadius(0).outerRadius(50);
+let selectedIndex = -1;
+let query = '';
 
 function renderPieChart(projectsGiven) {
 
@@ -20,7 +22,7 @@ function renderPieChart(projectsGiven) {
   d3.select('.legend').selectAll('li').remove();
 
   let newRolledData = d3.rollups(
-    projectsGiven,
+    projects,
     (v) => v.length,
     (d) => d.year,
   );
@@ -40,9 +42,34 @@ function renderPieChart(projectsGiven) {
     Newsvg.append('path')
       .attr('d', arc)
       .attr('fill', colors(idx))
+      .attr('class', selectedIndex === idx ? 'selected' : '')
       .on('click', () => {
-      selectedIndex = selectedIndex === i ? -1 : i;
-      updateChart();
+      selectedIndex = selectedIndex === idx ? -1 : idx;
+      
+      Newsvg.selectAll('path')
+        .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : '');
+
+      d3.select('.legend')
+        .selectAll('li')
+        .attr('class', (_, idx) => idx === selectedIndex ? 'selected' : '');
+        
+      let filteredProjects = projects;
+
+      if (query) {
+        filteredProjects = filteredProjects.filter((project) => {
+            let values = Object.values(project).join(' ').toLowerCase();
+            return values.includes(query.toLowerCase());
+        });
+      }
+
+      if (selectedIndex !== -1) {
+        let selectedYear = newData[selectedIndex].label;
+        filteredProjects = filteredProjects.filter(p => p.year === selectedYear);
+      }
+
+    projectsTitle.textContent =  `${filteredProjects.length} Projects`;
+
+    renderProjects(filteredProjects, projectsContainer, 'h2');
     });
   });
 
@@ -58,16 +85,14 @@ function renderPieChart(projectsGiven) {
 
 renderPieChart(projects);
 
-let query = '';
 let searchInput = document.querySelector('.searchBar');
-
 searchInput.addEventListener('input', (event) => {
-  query = event.target.value.trim();
+query = event.target.value.trim();
 
-  let filteredProjects = projects.filter((project) => {
+    let filteredProjects = projects.filter((project) => {
     let values = Object.values(project).join(' ').toLowerCase();
     return values.includes(query.toLowerCase());
-  });
+    });
 
   projectsTitle.textContent = `${filteredProjects.length} Projects`;
 
