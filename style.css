@@ -59,11 +59,11 @@ html {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: var(--color);
+  background-color: var(--color-bg);
 }
 
 .legend li:hover {
-  background-color: #eee;
+  background-color: oklch(from var(--color-accent) 55% 40% h);
 }
 
 
