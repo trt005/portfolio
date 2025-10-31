@@ -1,8 +1,8 @@
 :root {
-    color-scheme: light dark;
+    color-scheme: light;
 
     /* light theme colors*/
-    --color-bg: #ededed;
+    --color-bg: #727272;
     --color-text: #333338;
     --color-accent: oklch(65% 0.25 240);
     --border-color: oklch(50% 0.13 250);
@@ -11,8 +11,7 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* dark theme colors*/
-        --color-bg: #333338;
-        --color-text: #ededed;
+        --color-text: #cdcdcd;
         --color-accent: oklch(65% 0.25 240);
         --border-color: oklch(50% 0.13 250);
     }
@@ -48,7 +47,7 @@ html {
 }
 
 .selected {
-    --color: oklch(60% 45% 0) !important;
+    --color: oklch(73.557% 0.11208 354.908) !important;
 }
 
 .selected:is(path) {
@@ -97,6 +96,31 @@ svg:has(path:hover) path:not(:hover) {
   background-color: var(--color);
 }
 
+.projects article > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.projects article p,
+.project-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: color-mix(in oklch, var(--color-bg), canvas 95%);
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+
+.projects article p:first-child {
+    flex: 1;
+}
+
+.projects article p:last-child {
+    flex-shrink: 0;
+}
+
 .color-scheme {
     position: absolute;
     top: 1rem;
@@ -108,6 +132,7 @@ svg:has(path:hover) path:not(:hover) {
 
 .color-scheme select {
     font-family: inherit;
+    cursor: pointer;
 }
 
 body {
@@ -222,6 +247,11 @@ img {
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     text-wrap: balance;
+    display: inline-block;
+    background-color: color-mix(in oklch, var(--color-bg), canvas 85%);
+    color: canvastext;
+    padding: 0.25em 0.6em;
+    border-radius: 0.5rem;
 }
 
 h1 {
