@@ -40,12 +40,12 @@ html {
 
 .legend {
   display: grid;
-  flex-wrap: wrap;
+  flex: 1 1 auto;
   grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 8px;
-  background-color: var(--color-bg);
+  background-color: color-mix(in oklch, var(--color-bg), canvas 85%);
 }
 
 .legend li {
@@ -53,6 +53,7 @@ html {
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
+  min-width: 9em;
 }
 
 .legend li .swatch {
@@ -117,12 +118,12 @@ nav a {
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
-  border-radius: 8px;
 }
 
 nav a.current {
     border-bottom: 0.4em solid var(--color-accent);
     padding-bottom: 0.1em;
+    border-radius: 8px;
 }
 
 input, textarea, button {
