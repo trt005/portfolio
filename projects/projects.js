@@ -39,15 +39,20 @@ function renderPieChart(projectsGiven) {
   newArcs.forEach((arc, idx) => {
     Newsvg.append('path')
       .attr('d', arc)
-      .attr('fill', colors(idx));
+      .attr('fill', colors(idx))
+      .on('click', () => {
+      selectedIndex = selectedIndex === i ? -1 : i;
+      updateChart();
+    });
   });
+
 
   let legend = d3.select('.legend');
   newData.forEach((d, idx) => {
     legend
       .append('li')
       .attr('style', `--color:${colors(idx)}`)
-      .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`);
+      .html(`<span class="swatch"></span> ${d.label} <em>(${d.value})</em>`)
   });
 }
 
