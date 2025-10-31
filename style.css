@@ -186,6 +186,12 @@ input, textarea, button {
     font: inherit;
 }
 
+.Tubby {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 form {
     display: grid;
     grid-template-columns: auto 1fr;
