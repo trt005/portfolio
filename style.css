@@ -46,6 +46,7 @@ html {
   padding: 1rem;
   border-radius: 8px;
   background-color: color-mix(in oklch, var(--color-bg), canvas 85%);
+  max-width: calc(100% - 50px);
 }
 
 .legend li {
@@ -68,7 +69,6 @@ html {
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   border-radius: 8px;
 }
-
 
 .color-scheme {
     position: absolute;
