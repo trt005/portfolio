@@ -34,6 +34,19 @@ html {
     overflow: visible;
 }
 
+#projects-pie-plot path {
+  transition: opacity 300ms ease;
+  cursor: pointer;
+}
+
+#projects-pie-plot:hover path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-pie-plot path:hover {
+  opacity: 1;
+}
+
 .container {
   display: flex;
   flex: 1;
@@ -157,6 +170,10 @@ form button:hover {
     background-color: oklch(from var(--color-accent) 55% 40% h);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+img {
+  border-radius: 8px;
 }
 
 .projects {
