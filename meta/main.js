@@ -170,12 +170,14 @@ function renderScatterPlot(data, commits){
   svg
     .append('g')
     .attr('transform', `translate(0, ${usableArea.bottom})`)
+    .attr('class', 'x-axis') // new line to mark the g tag
     .call(xAxis);
 
   // Add Y axis
   svg
     .append('g')
     .attr('transform', `translate(${usableArea.left}, 0)`)
+    .attr('class', 'y-axis') // just for consistency
     .call(yAxis);
 
   function isCommitSelected(selection, commit) {
@@ -308,6 +310,22 @@ function updateFileDisplay(filteredCommits) {
     })
     .sort((a, b) => b.lines.length - a.lines.length);
 
+
+  let uniqueTypes = Array.from(
+    new Set(lines.map(l => l.type))
+  );
+
+  let legend = d3.select("#files-legend")
+    .selectAll("li")
+    .data(uniqueTypes)
+    .join("li")
+    .attr("style", d => `--color: ${colors(d)}`)
+    .html(d => `
+      <span class="swatch"></span>
+      <span>${d}</span>
+    `);
+
+
   let filesContainer = d3
     .select('#files')
     .selectAll('div')
@@ -430,6 +448,31 @@ d3.select('#scatter-story')
 	`,
   );
 
+d3.select('#scattered-story')
+  .selectAll('.step')
+  .data(commits)
+  .join('div')
+  .attr('class', 'step')
+  .html(
+    (d, i) => `
+		On ${d.datetime.toLocaleString('en', {
+      dateStyle: 'full',
+      timeStyle: 'short',
+    })},
+		I made <a href="${d.url}" target="_blank">${
+      i > 0 ? 'another commit' : 'my first commit.'
+    }</a>.
+		I edited ${d.totalLines} lines across ${
+      d3.rollups(
+        d.lines,
+        (D) => D.length,
+        (d) => d.file,
+      ).length
+    } files.
+		Then I looked over what I added. It was okay.
+	`,
+  );
+
 function onStepEnter(response) {
   const commit = response.element.__data__;
   const targetTime = commit.datetime;
@@ -439,6 +482,15 @@ function onStepEnter(response) {
   updateScatterPlot(data, filtered);
 }
 
+function onStepEnter2(response) {
+  const commit = response.element.__data__;
+  const targetTime = commit.datetime;
+
+  const filtered = commits.filter(d => d.datetime <= targetTime);
+
+  updateFileDisplay(filtered);
+}
+
 const scroller = scrollama();
 scroller
   .setup({
@@ -446,3 +498,11 @@ scroller
     step: '#scrolly-1 .step',
   })
   .onStepEnter(onStepEnter);
+
+const scroller2 = scrollama();
+scroller2
+  .setup({
+    container: '#scrolly-2',
+    step: '#scrolly-2 .step',
+  })
+  .onStepEnter(onStepEnter2);
