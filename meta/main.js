@@ -418,8 +418,8 @@ function onTimeSliderChange() {
   updateFileDisplay(filteredCommits);
 }
 
-document.getElementById("commit-progress").addEventListener("input", onTimeSliderChange);
-onTimeSliderChange();
+//document.getElementById("commit-progress").addEventListener("input", onTimeSliderChange);
+//onTimeSliderChange();
 
 commits.sort((a, b) => a.datetime - b.datetime);
 

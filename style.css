@@ -102,6 +102,7 @@ visibility: hidden;
   > * {
     flex: 1;
   }
+  
   min-height: 160vh;
   padding-bottom: 20vh;
 }
@@ -132,7 +133,7 @@ visibility: hidden;
 }
 
 #legend {
-  font-size: 0.75rem;   /* smaller text */
+  font-size: 0.75rem;
   line-height: 1.2;
 }
 
